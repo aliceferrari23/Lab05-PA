@@ -119,12 +119,11 @@ def main(page: ft.Page):
     pulsante_conferma_responsabile = ft.Button("Conferma", on_click=conferma_responsabile)
 
     # Pulsanti per la gestione dell'inserimento di un nuovo strumento
-    btn_meno = ft.IconButton(ft.icons.REMOVE,icon_color="red", on_click=decrementa_valore)
-    btn_piu = ft.IconButton(ft.icons.ADD, icon_color="green", on_click=incrementa_valore)
+    btn_meno = ft.IconButton(ft.Icons.REMOVE,icon_color="red", on_click=decrementa_valore)
+    btn_piu = ft.IconButton(ft.Icons.ADD, icon_color="green", on_click=incrementa_valore)
     btn_aggiungi = ft.Button("Aggiungi strumento", on_click=aggiungi_nuovo_strumento)
     row1 = ft.Row([btn_meno, valore_strumento, btn_piu],
                   alignment=ft.MainAxisAlignment.CENTER)
-    page.add(row1)
     # --- LAYOUT ---
     page.add(
         toggle_cambia_tema,
@@ -146,6 +145,7 @@ def main(page: ft.Page):
             controls=[input_tipo, input_marca, input_anno],
             alignment=ft.MainAxisAlignment.CENTER
         ),
+        row1,
         btn_aggiungi,
 
         # Sezione 4
